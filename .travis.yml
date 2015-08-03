@@ -7,8 +7,12 @@ before_install:
   - sudo apt-get update -qq
 
 before_script:
+  - sudo apt-get install git-core
+  - sudo apt-get install kvm cloud-utils genisoimage
 
 script:
+  - git clone https://github.com/momo2828/kzorp.git --branch travis
+  - ./kzorp/driver/tests/run_kzorp_unit_tests.sh
 
 after_success:
 
