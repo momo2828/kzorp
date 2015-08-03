@@ -9,8 +9,6 @@ before_install:
 before_script:
   - sudo apt-get install git-core
   - sudo apt-get install kvm cloud-utils genisoimage
-  - sudo apt-get virtualbox
-  - sudo service virtualbox stop
   - sudo service qemu-kvm start
 
 script:
