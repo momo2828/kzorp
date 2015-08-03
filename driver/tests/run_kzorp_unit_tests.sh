@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -ex
 
 ## Dependencies
 # sudo modprobe kvm
@@ -45,8 +45,8 @@ while (( $# )); do
 done
 
 case ${Architecture} in
-  "amd64") Qemu="qemu-system-x86_64 --enable-kvm";;
-  "i386") Qemu="qemu-system-i386 --enable-kvm";;
+  "amd64") Qemu="qemu-system-x86_64";;
+  "i386") Qemu="qemu-system-i386";;
   "arm64") Qemu="qemu-system-arm -machine virt";;
   *) echo "Error: ${Architecture} is not a supported architecture. Only amd64, i386 and arm64 are supported."; exit 1;;
 esac
