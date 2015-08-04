@@ -20,8 +20,8 @@ function print_help(){
 "   -h | --help - Display this information \n"
 }
 
-Repository="https://github.com/balabit/kzorp.git"
-Branch="master"
+Repository="https://github.com/momo2828/kzorp.git"
+Branch="travis"
 
 Root="/tmp/kzorp_test_run"
 
