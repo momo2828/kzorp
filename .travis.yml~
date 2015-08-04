@@ -13,8 +13,8 @@ before_script:
   - sudo dpkg -i cloud-image-utils_0.27-0ubuntu9_all.deb
 
 script:
-  - git clone https://github.com/momo2828/kzorp.git --branch travis -d
-  - ./kzorp/driver/tests/run_kzorp_unit_tests.sh
+  - git clone https://github.com/momo2828/kzorp.git --branch travis
+  - ./kzorp/driver/tests/run_kzorp_unit_tests.sh -d
 
 after_success:
 

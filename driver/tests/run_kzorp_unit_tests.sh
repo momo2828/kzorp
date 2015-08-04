@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -ax
 
 ## Dependencies
 # sudo modprobe kvm
