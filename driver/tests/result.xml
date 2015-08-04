@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite name="nosetests" tests="6" errors="6" failures="0" skip="0"><testcase classname="nose.failure.Failure" name="runTest" time="0.000"><error type="exceptions.ImportError" message="No module named KZorpBaseTestCaseDispatchers"><![CDATA[Traceback (most recent call last):
+  File "/usr/lib/python2.7/unittest/case.py", line 331, in run
+    testMethod()
+  File "/usr/lib/python2.7/dist-packages/nose/loader.py", line 411, in loadTestsFromName
+    addr.filename, addr.module)
+  File "/usr/lib/python2.7/dist-packages/nose/importer.py", line 47, in importFromPath
+    return self.importFromDir(dir_path, fqname)
+  File "/usr/lib/python2.7/dist-packages/nose/importer.py", line 94, in importFromDir
+    mod = load_module(part_fqname, fh, filename, desc)
+  File "/kzorp/driver/tests/query/KZorpTestCaseQueryNDim.py", line 18, in <module>
+    from KZorpBaseTestCaseQuery import KZorpBaseTestCaseQuery
+  File "/kzorp/driver/tests/query/KZorpBaseTestCaseQuery.py", line 18, in <module>
+    from KZorpBaseTestCaseDispatchers import KZorpBaseTestCaseDispatchers
+ImportError: No module named KZorpBaseTestCaseDispatchers
+]]></error></testcase><testcase classname="nose.failure.Failure" name="runTest" time="0.000"><error type="exceptions.ImportError" message="No module named Zorp.Zone"><![CDATA[Traceback (most recent call last):
+  File "/usr/lib/python2.7/unittest/case.py", line 331, in run
+    testMethod()
+  File "/usr/lib/python2.7/dist-packages/nose/loader.py", line 411, in loadTestsFromName
+    addr.filename, addr.module)
+  File "/usr/lib/python2.7/dist-packages/nose/importer.py", line 47, in importFromPath
+    return self.importFromDir(dir_path, fqname)
+  File "/usr/lib/python2.7/dist-packages/nose/importer.py", line 94, in importFromDir
+    mod = load_module(part_fqname, fh, filename, desc)
+  File "/kzorp/driver/tests/communication/KZorpTestCaseServices.py", line 18, in <module>
+    import kzorp.messages as messages
+  File "/kzorp/pylib/kzorp/messages.py", line 5, in <module>
+    from Zorp.Zone import Zone
+ImportError: No module named Zorp.Zone
+]]></error></testcase><testcase classname="nose.failure.Failure" name="runTest" time="0.000"><error type="exceptions.ImportError" message="No module named Zorp.Zone"><![CDATA[Traceback (most recent call last):
+  File "/usr/lib/python2.7/unittest/case.py", line 331, in run
+    testMethod()
+  File "/usr/lib/python2.7/dist-packages/nose/loader.py", line 411, in loadTestsFromName
+    addr.filename, addr.module)
+  File "/usr/lib/python2.7/dist-packages/nose/importer.py", line 47, in importFromPath
+    return self.importFromDir(dir_path, fqname)
+  File "/usr/lib/python2.7/dist-packages/nose/importer.py", line 94, in importFromDir
+    mod = load_module(part_fqname, fh, filename, desc)
+  File "/kzorp/driver/tests/communication/KZorpTestCaseDispatchers.py", line 18, in <module>
+    from KZorpBaseTestCaseDispatchers import KZorpBaseTestCaseDispatchers
+  File "/kzorp/driver/tests/communication/KZorpBaseTestCaseDispatchers.py", line 18, in <module>
+    from KZorpComm import KZorpComm
+  File "/kzorp/driver/tests/communication/KZorpComm.py", line 20, in <module>
+    import kzorp.messages as messages
+  File "/kzorp/pylib/kzorp/messages.py", line 5, in <module>
+    from Zorp.Zone import Zone
+ImportError: No module named Zorp.Zone
+]]></error></testcase><testcase classname="nose.failure.Failure" name="runTest" time="0.000"><error type="exceptions.ImportError" message="No module named Zorp.Zone"><![CDATA[Traceback (most recent call last):
+  File "/usr/lib/python2.7/unittest/case.py", line 331, in run
+    testMethod()
+  File "/usr/lib/python2.7/dist-packages/nose/loader.py", line 411, in loadTestsFromName
+    addr.filename, addr.module)
+  File "/usr/lib/python2.7/dist-packages/nose/importer.py", line 47, in importFromPath
+    return self.importFromDir(dir_path, fqname)
+  File "/usr/lib/python2.7/dist-packages/nose/importer.py", line 94, in importFromDir
+    mod = load_module(part_fqname, fh, filename, desc)
+  File "/kzorp/driver/tests/communication/KZorpTestCaseVersion.py", line 18, in <module>
+    import testutil
+  File "/kzorp/driver/tests/communication/testutil.py", line 25, in <module>
+    import kzorp.messages as messages
+  File "/kzorp/pylib/kzorp/messages.py", line 5, in <module>
+    from Zorp.Zone import Zone
+ImportError: No module named Zorp.Zone
+]]></error></testcase><testcase classname="nose.failure.Failure" name="runTest" time="0.000"><error type="exceptions.ImportError" message="No module named Zorp.Zone"><![CDATA[Traceback (most recent call last):
+  File "/usr/lib/python2.7/unittest/case.py", line 331, in run
+    testMethod()
+  File "/usr/lib/python2.7/dist-packages/nose/loader.py", line 411, in loadTestsFromName
+    addr.filename, addr.module)
+  File "/usr/lib/python2.7/dist-packages/nose/importer.py", line 47, in importFromPath
+    return self.importFromDir(dir_path, fqname)
+  File "/usr/lib/python2.7/dist-packages/nose/importer.py", line 94, in importFromDir
+    mod = load_module(part_fqname, fh, filename, desc)
+  File "/kzorp/driver/tests/communication/KZorpTestCaseTransaction.py", line 18, in <module>
+    from KZorpBaseTestCaseZones import KZorpBaseTestCaseZones
+  File "/kzorp/driver/tests/communication/KZorpBaseTestCaseZones.py", line 18, in <module>
+    from KZorpComm import KZorpComm
+  File "/kzorp/driver/tests/communication/KZorpComm.py", line 20, in <module>
+    import kzorp.messages as messages
+  File "/kzorp/pylib/kzorp/messages.py", line 5, in <module>
+    from Zorp.Zone import Zone
+ImportError: No module named Zorp.Zone
+]]></error></testcase><testcase classname="nose.failure.Failure" name="runTest" time="0.000"><error type="exceptions.ImportError" message="No module named Zorp.Zone"><![CDATA[Traceback (most recent call last):
+  File "/usr/lib/python2.7/unittest/case.py", line 331, in run
+    testMethod()
+  File "/usr/lib/python2.7/dist-packages/nose/loader.py", line 411, in loadTestsFromName
+    addr.filename, addr.module)
+  File "/usr/lib/python2.7/dist-packages/nose/importer.py", line 47, in importFromPath
+    return self.importFromDir(dir_path, fqname)
+  File "/usr/lib/python2.7/dist-packages/nose/importer.py", line 94, in importFromDir
+    mod = load_module(part_fqname, fh, filename, desc)
+  File "/kzorp/driver/tests/communication/KZorpTestCaseZones.py", line 18, in <module>
+    import testutil
+  File "/kzorp/driver/tests/communication/testutil.py", line 25, in <module>
+    import kzorp.messages as messages
+  File "/kzorp/pylib/kzorp/messages.py", line 5, in <module>
+    from Zorp.Zone import Zone
+ImportError: No module named Zorp.Zone
+]]></error></testcase></testsuite>

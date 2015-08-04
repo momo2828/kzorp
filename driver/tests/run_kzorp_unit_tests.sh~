@@ -99,8 +99,6 @@ password: zorp
 chpasswd: { expire: False }
 ssh_pwauth: True
 packages: $Packages
-hostname: ubuntu
-manage_etc_hosts: localhost
 runcmd:
  - set -x
  - mkdir -p $TestRoot

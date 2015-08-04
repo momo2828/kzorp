@@ -1,0 +1,22 @@
+language: c
+compiler:
+  - gcc
+script:
+
+before_install:
+  - sudo apt-get update -qq
+
+before_script:
+  - sudo apt-get install git-core
+  - sudo apt-get install kvm cloud-utils genisoimage
+  - wget http://archive.ubuntu.com/ubuntu/pool/main/c/cloud-utils/cloud-image-utils_0.27-0ubuntu9_all.deb
+  - sudo dpkg -i cloud-image-utils_0.27-0ubuntu9_all.deb
+
+script:
+  - git clone https://github.com/momo2828/kzorp.git --branch travis
+  - ./kzorp/driver/tests/run_kzorp_unit_tests.sh
+
+after_success:
+
+env:
+  global:chow
