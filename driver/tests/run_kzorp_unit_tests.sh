@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/bash
 
 ## Dependencies
 # sudo modprobe kvm
@@ -112,12 +112,18 @@ runcmd:
  - sudo make install-driver
  - TEST_PYTHONPATH=\$PWD/pylib:\$PWD/driver/tests/base
  - TEST_FILES=\`find driver/tests/ -name KZorpTestCase\*.py -printf "%p "\`
- - echo clear | sudo tee /sys/kernel/debug/kmemleak
+ - if [ ! -z $KMemLeakURL ] 
+ - then 
+ - echo clear | sudo tee /sys/kernel/debug/kmemleak 
+ - fi
  - sudo bash -c "PYTHONPATH=\$PYTHONPATH:\$TEST_PYTHONPATH nosetests --with-xunit \$TEST_FILES"
+ - if [ ! -z $KMemLeakURL ] 
+ - then 
  - sleep 5
- - echo scan | sudo tee /sys/kernel/debug/kmemleak  # kmemleak is more reliable when scanning twice:
- - echo scan | sudo tee /sys/kernel/debug/kmemleak  # http://stackoverflow.com/questions/12943906/debug-kernel-module-memory-corruption
- - sudo cp /sys/kernel/debug/kmemleak ${TestRoot}/kmemleak
+ - echo scan | sudo tee /sys/kernel/debug/kmemleak # kmemleak is more reliable when scanning twice:
+ - echo scan | sudo tee /sys/kernel/debug/kmemleak # http://stackoverflow.com/questions/12943906/debug-kernel-module-memory-corruption
+ - sudo cp /sys/kernel/debug/kmemleak ${TestRoot}/kmemleak 
+ - fi
  - cp nosetests.xml ${TestRoot}/result.xml
  - sudo poweroff
 EOF
