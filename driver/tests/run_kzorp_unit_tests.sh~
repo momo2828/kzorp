@@ -15,12 +15,14 @@ function print_help(){
 "   -r | --repository REPO - GIT repository of kZorp \n" \
 "   -b | --branch BRANCH - branch name of the repository where kZorp is compiled from \n" \
 "   -a | --arch ARCHITECTURE - Architecture name of the package to be installed\n" \
+"   -d | --disable-kvm - Disables kvm\n" \
 "   -v | --version VERSION - Ubuntu version to run the test with\n" \
 "   -p | --path PATH - Path of the tests directory\n"
 "   -h | --help - Display this information \n"
 }
 
 Repository="https://github.com/momo2828/kzorp.git"
+
 Branch="travis"
 
 Root="/tmp/kzorp_test_run"
@@ -28,6 +30,8 @@ Root="/tmp/kzorp_test_run"
 TestSeedConf="run_test.conf"
 
 Architecture="amd64"
+
+Kvm=true
 
 OSVersion="14.04"
 
@@ -37,6 +41,7 @@ while (( $# )); do
     "-r" | "--Repository") Repository="$2"; shift 2;;
     "-b" | "--branch") Branch="$2"; shift 2;;
     "-a" | "--arch") Architecture="$2"; shift 2;;
+    "-d" | "--disable-kvm") Kvm=false; shift 1;;
     "-v" | "--version") OSVersion="$2"; shift 2;;
     "-p" | "--path") Root="$2"; shift 2;;
     "-h" | "--help") print_help; exit 0;;
@@ -46,10 +51,14 @@ done
 
 case ${Architecture} in
   "amd64") Qemu="qemu-system-x86_64";;
-  "i386") Qemu="qemu-system-i386";;
+  "i386")  Qemu="qemu-system-i386";;
   "arm64") Qemu="qemu-system-arm -machine virt";;
   *) echo "Error: ${Architecture} is not a supported architecture. Only amd64, i386 and arm64 are supported."; exit 1;;
 esac
+
+if [ $Kvm=true ]; then
+  Qemu+=" --enable-kvm"
+fi
 
 TestRoot="${Root}/tests"
 OSImageDir="${Root}/disk_images"
@@ -99,6 +108,8 @@ password: zorp
 chpasswd: { expire: False }
 ssh_pwauth: True
 packages: $Packages
+hostname: ubuntu
+manage_etc_hosts: localhost
 runcmd:
  - set -x
  - mkdir -p $TestRoot
