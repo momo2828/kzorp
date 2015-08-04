@@ -14,7 +14,7 @@ before_script:
 
 script:
   - git clone https://github.com/momo2828/kzorp.git --branch travis
-  - ./kzorp/driver/tests/run_kzorp_unit_tests.sh -d
+  - bash ./kzorp/driver/tests/run_kzorp_unit_tests.sh --disable-kvm
 
 after_success:
 
