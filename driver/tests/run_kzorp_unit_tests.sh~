@@ -1,4 +1,4 @@
-#!/bin/bash -ax
+#!/bin/bash
 
 ## Dependencies
 # sudo modprobe kvm
@@ -31,7 +31,7 @@ TestSeedConf="run_test.conf"
 
 Architecture="amd64"
 
-Kvm=true
+Kvm="true"
 
 OSVersion="14.04"
 
@@ -41,7 +41,7 @@ while (( $# )); do
     "-r" | "--Repository") Repository="$2"; shift 2;;
     "-b" | "--branch") Branch="$2"; shift 2;;
     "-a" | "--arch") Architecture="$2"; shift 2;;
-    "-d" | "--disable-kvm") Kvm=false; shift 1;;
+    "-d" | "--disable-kvm") Kvm="false"; shift 1;;
     "-v" | "--version") OSVersion="$2"; shift 2;;
     "-p" | "--path") Root="$2"; shift 2;;
     "-h" | "--help") print_help; exit 0;;
@@ -56,7 +56,7 @@ case ${Architecture} in
   *) echo "Error: ${Architecture} is not a supported architecture. Only amd64, i386 and arm64 are supported."; exit 1;;
 esac
 
-if [ $Kvm=true ]; then
+if [ $Kvm=="true" ]; then
   Qemu+=" --enable-kvm"
 fi
 
